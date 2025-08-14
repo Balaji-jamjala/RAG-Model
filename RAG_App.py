@@ -17,7 +17,7 @@ load_dotenv()
 #Set up Grog API key
 #gres api key a os.getenv("GROO APIKEY")
 
-groq_api_key=st.secrets["GROQ API KEY"]
+groq_api_key=st.secrets["GROQ_API_KEY"]
 
 st.set_page_config(page_title="Dynamic RAG with Groq", layout="wide")
 
