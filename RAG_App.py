@@ -91,7 +91,7 @@ if prompt_input st.chat_input("Ask a question about your documents..."):
       with st.chat_message("user"):
         st.markdown(prompt_input)
       
-      st.session_state.chat_history.append({"rote": "user", "content": prompt_input}}
+      st.session_state.chat_history.append({"rote": "user", "content": prompt_input})
       
       
       with st.spinner("Thinking..."):
