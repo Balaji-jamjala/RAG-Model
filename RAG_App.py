@@ -42,7 +42,7 @@ with st.sidebar:
           #To read the file, we first write it to a temporary file
           with open(file.name, "wb") as f:
             f.write(file.getbuffer())
-          Loader=PyPOFLoader(file.name)
+          Loader=PyPDFLoader(file.name)
           docs.extend(Loader.load())
 
       text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
