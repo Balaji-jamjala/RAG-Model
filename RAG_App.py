@@ -100,7 +100,7 @@ if prompt_input st.chat_input("Ask a question about your documents..."):
 
         retriever = st.session_state.vector.as_retrieverli
         
-        retrieval chain = create_retrieval_chainfretriever, document chain)
+        retrieval_chain = create_retrieval_chain(retriever, document_chain)
         
         start = time.process time()
 
