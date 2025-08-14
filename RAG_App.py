@@ -114,7 +114,7 @@ if prompt_input:=st.chat_input("Ask a question about your documents..."):
         st.markdownt( response['answer'])
         st. info(f"Response time: {response_time:.2f} seconds")
 
-      st.session_state.chat history.append({"role": "assistant", "content": response['answer']})
+      st.session_state.chat_history.append({"role": "assistant", "content": response['answer']})
 
 else:
   st.warning("Please process your documents before asking questions.")
