@@ -63,6 +63,7 @@ st.header("Chat with your Documents")
 llm = ChatGroq(groq_api_key=groq_api_key, model_name="Llama3-86-8192")
 
 # Create the prompt template
+# Create prompt with {question} variable
 prompt = ChatPromptTemplate.from_template(
     """
     Answer the questions based on the provided context only.
@@ -73,9 +74,10 @@ prompt = ChatPromptTemplate.from_template(
     {context}
     </context>
     
-    Question: {input}
+    Question: {question}
     """
 )
+
 
 # Display previous chat messages
 for message in st.session_state.chat_history:
@@ -91,27 +93,25 @@ if prompt_input := st.chat_input("Ask a question about your documents..."):
 
         with st.spinner("Thinking..."):
             document_chain = create_stuff_documents_chain(llm, prompt)
-
             retriever = st.session_state.vector.as_retriever()
-
             retrieval_chain = create_retrieval_chain(retriever, document_chain)
 
             start_time = time.process_time()
 
-            # Use .run() instead of .invoke()
             try:
-                response_text = retrieval_chain.run(prompt_input)
+                response = retrieval_chain.invoke({"question": prompt_input})
+                answer = response['answer']
             except Exception as e:
-                st.error(f"Error during chain run: {e}")
-                response_text = "Sorry, an error occurred."
+                st.error(f"Error during chain invoke: {e}")
+                answer = "Sorry, something went wrong."
 
             end_time = time.process_time()
             response_time = end_time - start_time
 
         with st.chat_message("assistant"):
-            st.markdown(response_text)
+            st.markdown(answer)
             st.info(f"Response time: {response_time:.2f} seconds")
 
-        st.session_state.chat_history.append({"role": "assistant", "content": response_text})
+        st.session_state.chat_history.append({"role": "assistant", "content": answer})
     else:
         st.warning("Please process your documents before asking questions.")
