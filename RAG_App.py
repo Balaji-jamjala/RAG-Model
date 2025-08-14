@@ -74,7 +74,7 @@ prompt = ChatPromptTemplate.from_template(
     {context}
     </context>
     
-    Question: {question}
+    Questions:{input}
     """
 )
 
