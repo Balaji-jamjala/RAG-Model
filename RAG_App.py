@@ -102,9 +102,7 @@ if prompt_input := st.chat_input("Ask a question about your documents..."):
             # Call the retrieval chain to get a response
             response = retrieval_chain.invoke({"input": prompt_input})
 
-            end_time = time.process_time()
-
-            response_time = end_time - start_time
+            response_time = time.process_time() - start
 
         with st.chat_message("assistant"):
             st.markdown(response['answer'])
