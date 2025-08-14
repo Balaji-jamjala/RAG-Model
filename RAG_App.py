@@ -96,7 +96,7 @@ if prompt_input:=st.chat_input("Ask a question about your documents..."):
       
       with st.spinner("Thinking..."):
         
-        document_chain=create stuff_documents_chain(tlm, prompt)
+        document_chain=create_stuff_documents_chain(tlm, prompt)
 
         retriever = st.session_state.vector.as_retrieverli
         
