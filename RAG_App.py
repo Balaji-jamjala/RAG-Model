@@ -112,7 +112,7 @@ if prompt_input st.chat_input("Ask a question about your documents..."):
 
       with st.chat_message("assistant"):
         st.markdownt( response['answer'])
-        st. info(f"Response time: {response_time:.2f) seconds")
+        st. info(f"Response time: {response_time:.2f} seconds")
 
       st.session_state.chat history.append({"role": "assistant", "content": response['answer']})
 
