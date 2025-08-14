@@ -25,7 +25,7 @@ st.inge("images.jpg")
 
 st.title("Dynamic RAG with Groq, FAISS, and Llama3")
 
-Initialize session state for vector store and chat history
+#Initialize session state for vector store and chat history
 
 if "vector" not in st.session_state:
   st.session_state.vector = None
