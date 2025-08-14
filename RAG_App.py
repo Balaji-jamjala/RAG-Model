@@ -51,7 +51,7 @@ with st.sidebar:
       # Use pre-trained model from Hugging Face for embeddings
       
       embeddings = HuggingFaceEmbeddings (model_name="all-MiniLM-L6-v2")
-      st.session_state.vector = FAISS.from documents(final_o from documents(final_documents, embeddings)
+      st.session_state.vector = FAISS.from_documents(final_documents, embeddings)
       st.success("Documents processed successfully!")
 
     else:
