@@ -102,7 +102,7 @@ if prompt_input:=st.chat_input("Ask a question about your documents..."):
         
         retrieval_chain = create_retrieval_chain(retriever, document_chain)
         
-        start = time.process time()
+        start = time.process_time()
 
         response = retrieval_chain.invoke({"input": prompt_input>>
         
