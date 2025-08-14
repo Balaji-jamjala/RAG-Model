@@ -21,7 +21,7 @@ groq_api_key=st.secrets["GROQ_API_KEY"]
 
 st.set_page_config(page_title="Dynamic RAG with Groq", layout="wide")
 
-st.inge("images.jpg")
+st.image("images.jpg")
 
 st.title("Dynamic RAG with Groq, FAISS, and Llama3")
 
