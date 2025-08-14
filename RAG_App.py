@@ -64,7 +64,7 @@ llm = ChatGroq(groq_api_key=groq_api_key, model_name="Llama3-86-8192")
 
 #Create the prompt template
 
-prompt = ChatPromptTemplate.from_template{
+prompt = ChatPromptTemplate.from_template(
       """
       Answer the questions based on the provided context only.
       
@@ -78,7 +78,7 @@ prompt = ChatPromptTemplate.from_template{
       
       Questions: (input>
       """
-}
+)
 # Display previous chat messages
 
 for message in st.session_state.chat_history:
