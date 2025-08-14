@@ -60,7 +60,7 @@ with st.sidebar:
 #Main chat interface
 
 st.header("Chat with your Documents")
-llm ChatGroq{groq_api_key-groq_api_key, model_name="Llama3-86-8192"}
+llm=ChatGroq{groq_api_key-groq_api_key, model_name="Llama3-86-8192"}
 
 #Create the prompt template
 
