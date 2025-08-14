@@ -83,7 +83,7 @@ prompt = ChatPromptTemplate.from_template{
 
 for message in st.session_state.chat_history:
   with st.chat_message(message["role"]):
-    st.markdown (message ["content"]}
+    st.markdown (message ["content"])
 
 #Get user Input
 if prompt_input st.chat_input("Ask a question about your documents..."):
