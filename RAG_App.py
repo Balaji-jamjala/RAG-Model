@@ -12,7 +12,7 @@ from langchain_huggingface import HuggingFaceEmbeddings
 import time
 
 #Load environment variables
-Load_dotenv()
+load_dotenv()
 
 #Set up Grog API key
 #gres api key a os.getenv("GROO APIKEY")
